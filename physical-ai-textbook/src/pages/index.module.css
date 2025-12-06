@@ -1,23 +1,290 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+:global(:root) {
+  --bg: #05060b;
+  --card: #0c111a;
+  --muted: #a9b6cc;
+  --accent: #7ef3c7;
+  --accent-2: #6ea8ff;
+  --border: rgba(255, 255, 255, 0.08);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  --radius: 18px;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+:global(body) {
+  font-family: 'Space Grotesk', 'DM Sans', system-ui, -apple-system, sans-serif;
 }
 
-.buttons {
-  display: flex;
+:global(body.home-gradient) {
+  background: radial-gradient(circle at 20% 15%, rgba(126, 243, 199, 0.1), transparent 30%),
+    radial-gradient(circle at 80% 0%, rgba(110, 168, 255, 0.18), transparent 35%),
+    var(--bg);
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+  color: #f5f7ff;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
   align-items: center;
-  justify-content: center;
+  padding: 32px 0 12px;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(110, 168, 255, 0.18);
+  color: #d9e8ff;
+  font-weight: 600;
+  width: fit-content;
+  letter-spacing: -0.01em;
+}
+
+.heroTitle {
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.heroSubtitle {
+  color: var(--muted);
+  font-size: 17px;
+  max-width: 640px;
+  margin: 0;
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.primary {
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  color: #051019;
+  border: none;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.ghost {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f5f7ff;
+  border-radius: 14px;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.heroCard {
+  background: linear-gradient(160deg, rgba(110, 168, 255, 0.16), rgba(126, 243, 199, 0.08)),
+    var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #d5e6ff;
+}
+
+.cardBadge {
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.cardYear {
+  color: var(--muted);
+}
+
+.cardTitle {
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+.cardBody {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.cardBody ul {
+  padding-left: 18px;
+  margin: 10px 0 0;
+  display: grid;
+  gap: 8px;
+}
+
+.cardLink {
+  color: #f5f7ff;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.section {
+  margin-top: 54px;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 760px;
+}
+
+.kicker {
+  font-size: 13px;
+  font-weight: 700;
+  color: #d5e6ff;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.sectionTitle {
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+.sectionSubtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.grid {
+  margin-top: 22px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 8px;
+}
+
+.cardHeading {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.cardCopy {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.signalGrid {
+  margin-top: 20px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.signalCard {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: linear-gradient(140deg, rgba(126, 243, 199, 0.08), rgba(12, 17, 26, 0.96));
+  box-shadow: var(--shadow);
+}
+
+.signalTitle {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.signalCopy {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.blogSection {
+  border-top: 1px solid var(--border);
+  padding-top: 44px;
+}
+
+.blogGrid {
+  margin-top: 20px;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.blogCard {
+  padding: 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f5f7ff;
+  text-decoration: none;
+  display: grid;
+  gap: 10px;
+  transition: transform 120ms ease, border-color 120ms ease;
+}
+
+.blogCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(126, 243, 199, 0.7);
+}
+
+.blogTitle {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.blogCopy {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.blogLink {
+  font-weight: 600;
+  color: #d9e8ff;
+}
+
+@media screen and (max-width: 960px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .page {
+    padding: 16px 16px 64px;
+  }
 }

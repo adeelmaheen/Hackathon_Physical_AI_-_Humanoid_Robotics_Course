@@ -1,19 +1,16 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
-
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
-
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
-
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+﻿physical ai:
+  label: Physical AI
+  permalink: /physical-ai
+  description: Systems that connect perception, planning, and actuation for embodied intelligence.
+humanoid robotics:
+  label: Humanoid Robotics
+  permalink: /humanoid-robotics
+  description: Notes on balancing latency, safety, and control for humanoid platforms.
+agentic ai:
+  label: Agentic AI
+  permalink: /agentic-ai
+  description: Architectures and loops for autonomous agents with safeguards.
+observability:
+  label: Observability
+  permalink: /observability
+  description: Telemetry, evaluation, and guardrails for production-grade robotics.
